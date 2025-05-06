@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>트렌디 쇼핑몰</title>
+    <link rel="stylesheet" href="tapie과제.css">
+</head>
+<body>
+    <header>
+        <h1>스투시</h1>
+        <nav>
+            <button class="login-button">홈 상품</button>
+            <button id="cartBtn">장바구니</button> <!-- 장바구니 버튼 -->
+            <button id="loginBtn">로그인</button> <!-- 로그인 버튼 -->
+            <button id="logoutBtn" style="display:none;">로그아웃</button> <!-- 로그아웃 버튼 -->
+            <div id="user-info"></div> <!-- 로그인 성공 시 아이디 표시 -->
+        </nav>
+    </header>
+
+    <main>
+        <div class="products">
+            <div class="product">
+                <a href="https://shopping.naver.com" target="_blank">
+                    <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fimg022.feelway.com%2F5555%2F1bd353pd5555846590ed2.jpg%3Fcd%3D1736089200&type=a340" alt="상품 1">
+                </a>
+                <p>스투시 맨투맨 - 39,000원</p>
+                <button onclick="addToCart('스투시 맨투맨', 39000)">장바구니 추가</button>
+            </div>
+
+            <div class="product">
+                <a href="https://shopping.naver.com" target="_blank">
+                    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20250331_134%2F1743406121467DQtnN_JPEG%2F5295942195065331_392024403.JPG&type=a340" alt="상품 2">
+                </a>
+                <p>스투시 후드집업 - 59,000원</p>
+                <button onclick="addToCart('스투시 후드집업', 59000)">장바구니 추가</button>
+            </div>
+
+            <div class="product">
+                <a href="https://shopping.naver.com" target="_blank">
+                    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fshopping.phinf.naver.net%2Fmain_4890396%2F48903963666.1.20240829093205.jpg&type=sc960_832" alt="상품 3">
+                </a>
+                <p>스투시 반팔 - 109,000원</p>
+                <button onclick="addToCart('스투시 반팔', 109000)">장바구니 추가</button>
+            </div>
+
+            <div class="product">
+                <a href="https://shopping.naver.com" target="_blank">
+                    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20210902_14%2F1630544989593FeyTa_JPEG%2F31680835296562112_1666165337.jpg&type=sc960_832" alt="상품 4">
+                </a>
+                <p>스투시 후드티- 129,000원</p>
+                <button onclick="addToCart('스투시 후드티', 129000)">장바구니 추가</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- 로그인 모달 -->
+    <div id="loginModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);">
+        <h2>로그인</h2>
+        <label for="username">아이디:</label>
+        <input type="text" id="username"><br><br>
+        <label for="password">비밀번호:</label>
+        <input type="password" id="password"><br><br>
+        <button id="closeModal">닫기</button>
+        <button id="login" onclick="login()">로그인</button>
+    </div>
+
+    <!-- 장바구니 모달 -->
+    <div id="cartModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); max-height: 60%; overflow-y: auto;">
+        <h2>장바구니</h2>
+        <ul id="cartItems"></ul> <!-- 장바구니에 담긴 상품 목록 -->
+        <button id="closeCartModal">닫기</button>
+    </div>
+
+    <script src="tapie과제.js"></script>
+</body>
+</html>
